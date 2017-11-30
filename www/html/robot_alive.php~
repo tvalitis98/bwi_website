@@ -1,5 +1,6 @@
 <html>
     <body>
+
 	robot_name: <?php echo $_GET["robot_name"]; ?><br>
 	timeout: <?php echo $_GET["timeout"]; ?><br>
 
