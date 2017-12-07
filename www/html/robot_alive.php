@@ -27,6 +27,7 @@
 
 		if ($result->num_rows > 0) {
 			// output data of each row
+			#die("GOT TO UPDATE");
 			while($row = $result->fetch_assoc()) {
 				$start_time = $row["start_time"];
 				$end_time = $row["end_time"];
@@ -37,7 +38,7 @@
 				"WHERE " .
 				"start_time='" . $start_time . "' AND" .
 				"robot_name='" . $_GET["robot_name"] . "'";
-			$result = $conn->query($select_query);
+			$result = $conn->query($update_query);
 		} else {
 			#die("GOT TO INSERT");
 			$insert_query =
