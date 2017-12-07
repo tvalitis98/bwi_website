@@ -4,7 +4,6 @@
 	timeout: <?php echo $_GET["timeout"]; ?><br>
 
 	<?php
-
 		$servername = "localhost";
 		$username = "webuser";
 		$password = "i_am_a_web_user";
@@ -39,7 +38,8 @@
 				"start_time='" . $start_time . "' AND" .
 				"robot_name='" . $_GET["robot_name"] . "'";
 			$result = $conn->query($select_query);
-		} else {			
+		} else {
+			#die("GOT TO INSERT");
 			$insert_query =
 				"INSERT INTO ROBOTS.ROBOT_SESSIONS" .
 				"(robot_name, start_time, end_time) " .
@@ -48,6 +48,7 @@
 				"'" . time() . "', " . 
 				"'" . (time() + $_GET["timeout"]) . "'" .
 				")";
+			$conn->query($insert_query);
 		}
 
 		$conn->close();
