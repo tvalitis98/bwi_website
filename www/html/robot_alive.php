@@ -4,6 +4,10 @@
 	timeout: <?php echo $_GET["timeout"]; ?><br>
 
 	<?php
+		require_once __DIR__ . '/create_event.php';
+		//$output = shell_exec('php create_event.php');
+		echo "$output";
+		#echo phpversion();
 		$servername = "localhost";
 		$username = "webuser";
 		$password = "i_am_a_web_user";
@@ -19,8 +23,7 @@
 			"FROM ROBOTS.ROBOT_SESSIONS " .
 			"WHERE " .
 			"robot_name='" . $_GET["robot_name"] . "' AND " .
-			"end_time > '" . (time() - $_GET["timeout"]) . "' AND " .
-			"end_time < '" . (time() + $_GET["timeout"]) . "'"
+			"end_time > '" . (time()) . "';"
 			;
 
 		$result = $conn->query($select_query);
@@ -32,13 +35,14 @@
 				$start_time = $row["start_time"];
 				$end_time = $row["end_time"];
 			}
+			$new_end_time = (time() + $_GET["timeout"]);	
 			$update_query =
 				"UPDATE ROBOTS.ROBOT_SESSIONS SET " .
-				"end_time='" . ( $end_time + $_GET["timeout"] ) . "'" .
+				"end_time='" . ( $new_end_time ) . "' " .
 				"WHERE " .
-				"start_time='" . $start_time . "' AND" .
+				"start_time='" . $start_time . "' AND " .
 				"robot_name='" . $_GET["robot_name"] . "'";
-			$result = $conn->query($update_query);
+			$conn->query($update_query);
 		} else {
 			#die("GOT TO INSERT");
 			$insert_query =
