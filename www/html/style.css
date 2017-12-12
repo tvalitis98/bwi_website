@@ -3,14 +3,10 @@
     @import url('https://fonts.googleapis.com/css?family=Ubuntu');
   }
   body {
-    background-color: black;
+    background-color: white;
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-    color: white;
-    margin: 0;
+    color: black;
     padding: 0;
-  }
-  h1 {
-    font-size: 40px;
   }
   tr {
     font-size: 30px;
@@ -24,8 +20,8 @@
   table {
     text-align: center;
   }
-  button {
-    background-color: #4CAF50; /* Green */
+  /*button {
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 20px;
@@ -36,7 +32,7 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 3px;
-  }
+  }*/
   button:hover {
     background-color: #6FBF72;
   }
@@ -48,25 +44,28 @@
     color: red;
   }
   a:link, a:visited {
-    color: #d0839a;
-    background-color: black;
+    color: black;
+    background-color: ehite;
   }
   a:hover, a:active {
-    color: #628089;
-    background-color: black;
+    color: orange;
+    background-color: white;
   }
-  ul {
+  h2 {
+    color: orange;
+  }
+  div > ul {
     list-style-type: none;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
   }
-  li {
+  div > ul > li {
     text-align: center;
     padding: 10px;
     display: inline;
   }
-  a:link, a:visited {
+  a:link.header, a:visited.header {
     background-color: black;
     color: white;
     border: none;
@@ -75,7 +74,7 @@
     text-decoration: none;
     display: inline-block;
   }
-  a:hover, a:active {
+  a:hover.header, header.a:active.header {
     text-decoration: none;
     color: orange;
   }
