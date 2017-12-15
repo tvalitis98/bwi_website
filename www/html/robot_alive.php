@@ -5,9 +5,7 @@
 
 	<?php
 		require_once __DIR__ . '/create_event.php';
-		//$output = shell_exec('php create_event.php');
 		echo "$output";
-		#echo phpversion();
 		$servername = "localhost";
 		$username = "webuser";
 		$password = "i_am_a_web_user";

@@ -5,6 +5,8 @@
 
 <center><iframe src="https://calendar.google.com/calendar/embed?src=bwi.robots%40gmail.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" ></iframe></center>
 
+<?php require_once __DIR__ . '/uptime.php';?>
+
 <h2 id="pubs">Publications</h2>
 
 <h4>2018:</h4>
